@@ -1,1 +1,11 @@
 /* CSS declarations go here */
+.flow_left {
+	display:block;
+	float:left;
+	position:relative;
+	width:50%;
+}
+
+ul {
+	list-style:none;
+}

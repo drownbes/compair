@@ -1,14 +1,31 @@
 <head>
+	<script src="https://code.jquery.com/jquery-2.1.1.js"></script>
+
+	<script src="tailgen.js"></script>
   <title>compair</title>
 </head>
 
 <body>
-  <h1>Welcome to Meteor!</h1>
+  <h1>Data viewer</h1>
 
-  {{> hello}}
+  {{> index}}
 </body>
 
-<template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
+<template name="index">
+<div class="flow_left">
+<ul>
+	{{#each tags}}
+	{{> tagLi}}
+	{{/each}}
+</ul>
+</div>
+<div id="content" class="flow_left">{{content}}</div>
 </template>
+
+<template name="tagLi">
+<li>
+	<input type="radio" name="tags" id="{{ this }}">
+	<label for="{{ this }}"> {{ this }}</label>
+</li>
+</template>
+
